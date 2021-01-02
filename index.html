@@ -3,20 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
-   
-
-    <title>Unity WebGL Player | GROßE MÜLHEIM REVUE</title>
+    <title>Unity WebGL Player | Starke Veedel</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      UnityLoader.instantiate("unityContainer", "Build/Build Comp.json");
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build Comp.json", {onProgress: UnityProgress});
     </script>
   </head>
   <body>
-   
-	<div style="height:20px; width: %UNITY_WIDTH%px; background: white;" onclick="unityInstance.SetFullscreen(fullscreen)"><p>Hier clicken für den Vollbildmodus.</p></div>
-	  <div id="unityContainer" style="width: %UNITY_WIDTH%px; height: %UNITY_HEIGHT%px; margin: auto"></div>
-	  
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Starke Veedel</div>
+      </div>
+    </div>
   </body>
 </html>
